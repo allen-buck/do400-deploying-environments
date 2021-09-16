@@ -26,6 +26,7 @@ pipeline {
                     ./mvnw quarkus:add-extension \
                     -Dextensions="kubernetes,container-image-jib"
                 '''
+                echo "username=$QUAY_USR"
                 sh '''
                     ./mvnw package -DskipTests \
                     -Dquarkus.container-image.build=true \
